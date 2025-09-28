@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://djq1wed6wskhf"]
+
+[ext_resource type="FontFile" uid="uid://crcdamqg0flk8" path="res://Assets/fonts/PixelOperator8.ttf" id="2_8saeu"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="SacrificeHealthLabel" type="RichTextLabel" parent="."]
+offset_left = 66.0
+offset_top = 15.0
+offset_right = 256.0
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("2_8saeu")
+text = "Sacrifice Health"
+
+[node name="Sacrifice Health" type="Button" parent="."]
+offset_left = 59.0
+offset_top = 8.0
+offset_right = 263.0
+offset_bottom = 38.0
