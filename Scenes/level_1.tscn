@@ -1,4 +1,41 @@
-[gd_scene format=3 uid="uid://bmj7mcms0xu4l"]
+[gd_scene load_steps=5 format=4 uid="uid://bmj7mcms0xu4l"]
+
+[ext_resource type="Texture2D" uid="uid://bvs4evmkb0kpc" path="res://Assets/Tileset.png" id="1_8ffim"]
+[ext_resource type="PackedScene" uid="uid://bt8vyrw3k7pfo" path="res://Scenes/player.tscn" id="1_vk57k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfk5q"]
+texture = ExtResource("1_8ffim")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7p6j4"]
+sources/0 = SubResource("TileSetAtlasSource_xfk5q")
 
 [node name="Level1" type="Node2D"]
 
@@ -7,7 +44,7 @@
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Background"]
+tile_map_data = PackedByteArray("AAACAAEAAAABAAEAAAACAAIAAAABAAEAAAADAAIAAAABAAEAAAAEAAIAAAABAAEAAAAFAAIAAAABAAEAAAAGAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAFAAEAAAABAAEAAAABAAEAAAABAAEAAAAAAAEAAAABAAEAAAD//wEAAAABAAEAAAD//wIAAAABAAEAAAAAAAIAAAABAAEAAAABAAIAAAABAAEAAAAGAAIAAAABAAEAAAAHAAIAAAABAAEAAAAHAAEAAAABAAEAAAAIAAEAAAABAAEAAAAIAAIAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_7p6j4")
 
-[node name="Player" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+[node name="Player" parent="." instance=ExtResource("1_vk57k")]
