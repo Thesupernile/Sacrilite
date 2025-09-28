@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bo1trl7atl684"]
+[gd_scene load_steps=27 format=3 uid="uid://bo1trl7atl684"]
 
 [ext_resource type="Script" uid="uid://eneduhabr8lb" path="res://cleric_projectile.gd" id="1_f713g"]
 [ext_resource type="Texture2D" uid="uid://c8qi0hwjyqt6f" path="res://Assets/projectiles/cleric_projectile_blue.png" id="2_vomgu"]
@@ -162,11 +162,19 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 25.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f713g"]
+radius = 17.0
 
 [node name="cleric_projectile" type="Area2D"]
 script = ExtResource("1_f713g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vnii2")
+frame_progress = 0.3481959
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_f713g")
