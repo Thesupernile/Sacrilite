@@ -82,4 +82,4 @@ tile_set = ExtResource("3_12fag")
 position = Vector2(88, 38)
 
 [node name="any" type="Marker2D" parent="enterance_markers"]
-position = Vector2(8, 46)
+position = Vector2(-58, -8)
