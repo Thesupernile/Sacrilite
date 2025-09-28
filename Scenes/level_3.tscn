@@ -93,5 +93,5 @@ position = Vector2(109, 28)
 position = Vector2(8, 46)
 
 [node name="Portal" parent="." instance=ExtResource("7_fxnjf")]
-position = Vector2(272, -18)
-connected_scene = "level_2"
+position = Vector2(56, -191)
+connected_scene = "level_3"
