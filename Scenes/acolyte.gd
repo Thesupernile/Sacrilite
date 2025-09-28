@@ -1,6 +1,4 @@
 extends enemyBase
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@export var speed := 50
 @export var chase_range : float
 
 enum Direction {

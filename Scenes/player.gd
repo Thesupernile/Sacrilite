@@ -64,6 +64,8 @@ func _physics_process(_delta):
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if isAttacking:
 		isAttacking = false
+		LeftAttackHitbox.disabled = true
+		RightAttackHitbox.disabled = true
 
 func damage():
 	hp -= 1
