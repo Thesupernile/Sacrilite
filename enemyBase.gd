@@ -14,3 +14,4 @@ func enemyHit(damage, nodeHit):
 		print(hp)
 		if hp <= 0:
 			enemyDead()
+			

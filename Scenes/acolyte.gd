@@ -17,7 +17,6 @@ func _physics_process(_delta):
 		animated_sprite_2d.frame = 0
 	else:
 		animated_sprite_2d.play()
-
 	var direction := distance.normalized()
 	if direction.x > 0:
 		facing = Direction.RIGHT
