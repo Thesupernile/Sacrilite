@@ -34,7 +34,11 @@ size = Vector2(16, 37)
 [node name="Cleric" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
+motion_mode = 1
+wall_min_slide_angle = 0.0017453292
 script = ExtResource("1_1pgvo")
+flee_range = 80.0
+chase_range = 110.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5b5i4")
