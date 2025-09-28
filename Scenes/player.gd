@@ -77,7 +77,7 @@ func damage():
 		playerDead()
 		
 func playerDead():
-	get_tree().quit()
+	self.get_tree().call_deferred("change_scene_to_file", "res://Scenes/MainMenu.tscn")
 
 func _on_attack_right_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	global.emit_signal("enemyHitSignal", playerDamage, _area)
