@@ -5,6 +5,7 @@ class_name Player extends CharacterBody2D
 @onready var RightAttackHitbox: CollisionShape2D = $AttackRight/AttackRightBox
 
 var speed := 150
+var playerDamage := 5
 var isAttacking := false
 enum Direction {
 	LEFT,
@@ -58,7 +59,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		isAttacking = false
 
 func _on_attack_right_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	global.emit_signal("enemyHitSignal")
+	global.emit_signal("enemyHitSignal", playerDamage, area)
 
 func _on_attack_left_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	global.emit_signal("enemyHitSignal")
+	global.emit_signal("enemyHitSignal", playerDamage, area)

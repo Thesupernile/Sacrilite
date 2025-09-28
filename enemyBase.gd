@@ -8,8 +8,8 @@ func _ready():
 func enemyDead():
 	get_owner().remove_child(self)
 
-func enemyHit():
-	print(hp)
-	hp -= 1
-	if hp <= 0:
-		enemyDead()
+func enemyHit(damage, nodeHit):
+	if nodeHit == $HurtboxArea:
+		hp -= damage
+		if hp <= 0:
+			enemyDead()
