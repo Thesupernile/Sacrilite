@@ -1,6 +1,4 @@
 extends enemyBase
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@export var speed := 50
 @export var projectile_speed := 40
 @export var attack_cooldown_seconds := 2.0
 @export var flee_range : float
@@ -14,9 +12,6 @@ enum Direction {
 	RIGHT
 }
 var facing := Direction.LEFT
-
-func _ready():
-	animated_sprite_2d.play()
 
 func _physics_process(delta):
 	var distance := global.player_position - global_position
