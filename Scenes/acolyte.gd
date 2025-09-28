@@ -18,7 +18,6 @@ func _physics_process(_delta):
 		animated_sprite_2d.play("attack")
 		attacking = true
 		await get_tree().create_timer(0.8).timeout
-		print("a")
 		for area in attack_area.get_overlapping_areas():
 			if area.is_in_group("player"):
 				area.owner.damage()
