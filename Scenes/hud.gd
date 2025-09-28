@@ -7,6 +7,7 @@ var val = 0
 func _ready() -> void:
 	global.connect("playerDamaged", updateHealthBar)
 	val = 5 - global.player.hp
+	health_bar.frame = val
 	
 func updateHealthBar():
 	val += 1
