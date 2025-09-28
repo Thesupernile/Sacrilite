@@ -4,6 +4,8 @@ var player: Player
 var player_position := Vector2()
 var last_scene_name: String
 
+signal enemyHitSignal
+
 var scene_folder := "res://Scenes/"
 
 func changeScenes(from, to_scene_name: String) -> void:
