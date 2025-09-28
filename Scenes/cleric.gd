@@ -1,8 +1,8 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var hp = 5
-@export var flee_range = 100
-@export var chase_range = 120
+@export var flee_range : float
+@export var chase_range : float
 
 var speed := 50
 enum Direction {
