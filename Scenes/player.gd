@@ -19,5 +19,10 @@ func _physics_process(_delta):
 		facing = Direction.LEFT
 		animated_sprite_2d.flip_h = false
 		
+	if direction.x == 0 and direction.y == 0:
+		animated_sprite_2d.play("idle")
+	else:
+		animated_sprite_2d.play("run")
+		
 	velocity = direction * speed
 	move_and_slide()
