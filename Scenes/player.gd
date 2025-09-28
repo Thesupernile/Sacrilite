@@ -76,5 +76,5 @@ func damage():
 func _on_attack_right_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	global.emit_signal("enemyHitSignal", playerDamage, _area)
 
-func _on_attack_left_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_attack_left_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	global.emit_signal("enemyHitSignal", playerDamage, area)
