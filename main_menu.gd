@@ -2,7 +2,8 @@ extends Node2D
 
 @export var firstScene := "level_1"
 
-var firstScenePath = "res://Scenes/" + firstScene + ".tscn"
+var firstScenePath = "res://Scenes/level_1.tscn"
+@onready var player = $Player
 
 func _on_play_button_pressed() -> void:
-	global.changeScenes(get_owner(), firstScene)
+	global.changeScenes(self, firstScene)
