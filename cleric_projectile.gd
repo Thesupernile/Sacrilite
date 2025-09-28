@@ -4,6 +4,8 @@ var velocity := Vector2()
 
 func _ready():
 	animated_sprite_2d.play()
+	await get_tree().create_timer(10).timeout
+	queue_free()
 	
 func _physics_process(delta):
 	global_position += velocity * delta
