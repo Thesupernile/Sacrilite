@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://ds5oqkri2cwqv"]
+[gd_scene load_steps=10 format=4 uid="uid://ds5oqkri2cwqv"]
 
 [ext_resource type="Script" uid="uid://dg3pbygnpyshp" path="res://sceneScript.gd" id="1_smnlx"]
 [ext_resource type="Texture2D" uid="uid://bvs4evmkb0kpc" path="res://Assets/map/Tileset.png" id="1_v3rpw"]
 [ext_resource type="TileSet" uid="uid://cs80rfwokossl" path="res://Scenes/tilemap.tres" id="3_12fag"]
 [ext_resource type="PackedScene" path="res://Scenes/scene_trigger.tscn" id="4_1q6tm"]
 [ext_resource type="Script" uid="uid://csfkwto5103x8" path="res://Scenes/entities.gd" id="4_v36qu"]
+[ext_resource type="PackedScene" uid="uid://dnv0gb6db02n" path="res://Scenes/cleric.tscn" id="5_055b2"]
+[ext_resource type="PackedScene" uid="uid://c4me1ks1n41bb" path="res://Scenes/acolyte.tscn" id="6_2mgoq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_smnlx"]
 texture = ExtResource("1_v3rpw")
@@ -80,6 +82,18 @@ tile_set = ExtResource("3_12fag")
 
 [node name="Entities" type="Node2D" parent="."]
 script = ExtResource("4_v36qu")
+
+[node name="Cleric" parent="Entities" instance=ExtResource("5_055b2")]
+position = Vector2(-245, 33)
+
+[node name="Cleric2" parent="Entities" instance=ExtResource("5_055b2")]
+position = Vector2(-192, 76)
+
+[node name="Cleric3" parent="Entities" instance=ExtResource("5_055b2")]
+position = Vector2(-136, 56)
+
+[node name="Acolyte" parent="Entities" instance=ExtResource("6_2mgoq")]
+position = Vector2(104, 12)
 
 [node name="enterance_markers" type="Node2D" parent="."]
 position = Vector2(88, 38)
