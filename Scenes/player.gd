@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-var speed := 150  # speed in pixels/sec
+var speed := 150
 enum Direction {
 	LEFT,
 	RIGHT
