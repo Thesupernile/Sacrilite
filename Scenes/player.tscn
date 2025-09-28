@@ -107,7 +107,7 @@ size = Vector2(10, 8)
 size = Vector2(14, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
-size = Vector2(25, 61.5)
+size = Vector2(28.75, 61.5)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -135,14 +135,14 @@ shape = SubResource("RectangleShape2D_vgqql")
 [node name="AttackLeft" type="Area2D" parent="."]
 
 [node name="AttackLeftBox" type="CollisionShape2D" parent="AttackLeft"]
-position = Vector2(-15.5, -4.5)
+position = Vector2(-14.375, -4.5)
 shape = SubResource("RectangleShape2D_fkybt")
 disabled = true
 
 [node name="AttackRight" type="Area2D" parent="."]
 
 [node name="AttackRightBox" type="CollisionShape2D" parent="AttackRight"]
-position = Vector2(15, -4.25)
+position = Vector2(14.25, -4.25)
 shape = SubResource("RectangleShape2D_fkybt")
 disabled = true
 
