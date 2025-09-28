@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://ds5oqkri2cwqv"]
+[gd_scene load_steps=8 format=4 uid="uid://ds5oqkri2cwqv"]
 
 [ext_resource type="Script" uid="uid://dg3pbygnpyshp" path="res://sceneScript.gd" id="1_smnlx"]
 [ext_resource type="Texture2D" uid="uid://bvs4evmkb0kpc" path="res://Assets/map/Tileset.png" id="1_v3rpw"]
+[ext_resource type="PackedScene" uid="uid://c3v541vp7fpot" path="res://Scenes/hud.tscn" id="2_v36qu"]
 [ext_resource type="TileSet" uid="uid://cs80rfwokossl" path="res://Scenes/tilemap.tres" id="3_12fag"]
-[ext_resource type="PackedScene" path="res://Scenes/scene_trigger.tscn" id="4_1q6tm"]
+[ext_resource type="PackedScene" uid="uid://bfwbtmfncra30" path="res://Scenes/scene_trigger.tscn" id="4_1q6tm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_smnlx"]
 texture = ExtResource("1_v3rpw")
@@ -58,6 +59,8 @@ sources/0 = SubResource("TileSetAtlasSource_smnlx")
 
 [node name="level2" type="Node2D"]
 script = ExtResource("1_smnlx")
+
+[node name="HUD" parent="." instance=ExtResource("2_v36qu")]
 
 [node name="Background" type="Node2D" parent="."]
 
