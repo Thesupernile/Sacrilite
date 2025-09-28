@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://bmj7mcms0xu4l"]
+[gd_scene load_steps=11 format=4 uid="uid://bmj7mcms0xu4l"]
 
 [ext_resource type="TileSet" uid="uid://cs80rfwokossl" path="res://Scenes/tilemap.tres" id="1_8ffim"]
 [ext_resource type="Script" uid="uid://dg3pbygnpyshp" path="res://sceneScript.gd" id="1_evi0p"]
 [ext_resource type="PackedScene" uid="uid://bt8vyrw3k7pfo" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://dnv0gb6db02n" path="res://Scenes/cleric.tscn" id="2_7p6j4"]
 [ext_resource type="Texture2D" uid="uid://bvs4evmkb0kpc" path="res://Assets/map/Tileset.png" id="2_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://c3v541vp7fpot" path="res://Scenes/hud.tscn" id="2_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bfwbtmfncra30" path="res://Scenes/scene_trigger.tscn" id="5_6444e"]
 [ext_resource type="PackedScene" uid="uid://c4me1ks1n41bb" path="res://Scenes/acolyte.tscn" id="7_lsmp6"]
 
@@ -61,6 +62,8 @@ sources/0 = SubResource("TileSetAtlasSource_evi0p")
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_evi0p")
+
+[node name="HUD" parent="." instance=ExtResource("2_xrdnt")]
 
 [node name="Background" type="Node2D" parent="."]
 
