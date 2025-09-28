@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnv0gb6db02n"]
+[gd_scene load_steps=9 format=3 uid="uid://dnv0gb6db02n"]
 
 [ext_resource type="Script" uid="uid://bjdj4i84hspje" path="res://Scenes/cleric.gd" id="1_1pgvo"]
+[ext_resource type="PackedScene" uid="uid://bo1trl7atl684" path="res://Scenes/cleric_projectile.tscn" id="2_0klx0"]
 [ext_resource type="Texture2D" uid="uid://42dulepeu2vp" path="res://Assets/characters/ClericIdle.png" id="2_56820"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0klx0"]
@@ -39,9 +40,12 @@ wall_min_slide_angle = 0.0017453292
 script = ExtResource("1_1pgvo")
 flee_range = 80.0
 chase_range = 110.0
+Projectile = ExtResource("2_0klx0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5b5i4")
+frame = 1
+frame_progress = 0.61550224
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 15)
