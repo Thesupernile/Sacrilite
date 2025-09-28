@@ -14,6 +14,9 @@ func enemyDead():
 func enemyHit(damage, nodeHit):
 	if nodeHit == $HurtboxArea:
 		hp -= damage
+		animated_sprite_2d.modulate = Color(1, 0, 0)
+		await get_tree().create_timer(0.15).timeout
+		animated_sprite_2d.modulate = Color(1, 1, 1)
 		if hp <= 0:
 			enemyDead()
 			
