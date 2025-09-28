@@ -23,7 +23,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x072d"]
@@ -44,8 +44,12 @@ Projectile = ExtResource("2_0klx0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5b5i4")
+<<<<<<< HEAD
 frame = 1
 frame_progress = 0.61550224
+=======
+frame_progress = 0.8348829
+>>>>>>> d59a8c5ee4b0433c477339fbb44c9a93c00f684c
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 15)
