@@ -1,0 +1,5 @@
+extends Node2D
+
+
+func _on_play_button_pressed() -> void:
+	self.get_tree().call_deferred("change_scene_to_file", "res://Scenes/MainMenu.tscn")

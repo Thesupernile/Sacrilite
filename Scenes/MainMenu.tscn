@@ -30,6 +30,7 @@ theme_override_fonts/normal_font = ExtResource("2_8saeu")
 text = "Sacrifice Game"
 
 [node name="Player" parent="." instance=ExtResource("3_8saeu")]
+visible = false
 position = Vector2(162, 63)
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

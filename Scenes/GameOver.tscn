@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3qr5nw67vdl3"]
+
+[ext_resource type="Script" uid="uid://byibyvrlyj14b" path="res://Scenes/gameOver.gd" id="1_m5628"]
+[ext_resource type="FontFile" uid="uid://crcdamqg0flk8" path="res://Assets/fonts/PixelOperator8.ttf" id="2_k52d1"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_m5628")
+
+[node name="Play" type="RichTextLabel" parent="."]
+offset_left = 100.0
+offset_top = 91.0
+offset_right = 259.0
+offset_bottom = 107.0
+theme_override_fonts/normal_font = ExtResource("2_k52d1")
+text = "Play Again!"
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 60.0
+offset_top = 84.0
+offset_right = 264.0
+offset_bottom = 114.0
+
+[node name="SacrificeHealthLabel" type="RichTextLabel" parent="."]
+offset_left = 99.0
+offset_top = 18.0
+offset_right = 289.0
+offset_bottom = 34.0
+theme_override_fonts/normal_font = ExtResource("2_k52d1")
+text = "Game Over"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
