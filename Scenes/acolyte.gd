@@ -11,7 +11,7 @@ enum Direction {
 var facing = Direction.LEFT
 
 func _physics_process(_delta):
-	var distance = global.player_position - global_position
+	var distance := global.player_position - global_position
 	if distance.length() > chase_range or distance.length() < 20:
 		distance *= 0
 		animated_sprite_2d.pause()
@@ -19,7 +19,7 @@ func _physics_process(_delta):
 	else:
 		animated_sprite_2d.play()
 
-	var direction = distance.normalized()
+	var direction := distance.normalized()
 	if direction.x > 0:
 		facing = Direction.RIGHT
 		animated_sprite_2d.flip_h = true

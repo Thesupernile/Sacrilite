@@ -10,7 +10,7 @@ enum Direction {
 	LEFT,
 	RIGHT
 }
-var facing = Direction.LEFT
+var facing := Direction.LEFT
 
 func checkAttack():
 	if Input.is_action_just_pressed("attack"):
