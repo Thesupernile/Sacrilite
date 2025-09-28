@@ -80,11 +80,10 @@ tile_set = ExtResource("1_8ffim")
 
 [node name="Entities" type="Node2D" parent="."]
 
-[node name="Cleric" parent="Entities" instance=ExtResource("2_7p6j4")]
-position = Vector2(119, 39)
-
 [node name="Acolyte" parent="Entities" instance=ExtResource("7_lsmp6")]
 position = Vector2(79, 60)
+
+[node name="Cleric" parent="Entities" instance=ExtResource("2_7p6j4")]
 
 [node name="enterance_markers" type="Node2D" parent="."]
 
