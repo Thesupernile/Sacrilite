@@ -6,7 +6,7 @@ enum Direction {
 	LEFT,
 	RIGHT
 }
-var facing = Direction.LEFT
+var facing := Direction.LEFT
 
 func _physics_process(_delta):
 	global.player_position = global_position
