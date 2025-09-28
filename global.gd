@@ -7,6 +7,7 @@ var next_scene_path: String
 
 @warning_ignore("unused_signal")
 signal enemyHitSignal(damage : int, nodeHit : Area2D)
+signal playerDamaged
 
 var scene_folder := "res://Scenes/"
 
