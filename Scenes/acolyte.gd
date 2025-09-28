@@ -14,6 +14,10 @@ func _physics_process(_delta):
 	var distance = global.player_position - global_position
 	if distance.length() > chase_range:
 		distance *= 0
+		animated_sprite_2d.pause()
+		animated_sprite_2d.frame = 0
+	else:
+		animated_sprite_2d.play()
 
 	var direction = distance.normalized()
 	if direction.x > 0:

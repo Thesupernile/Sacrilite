@@ -11,6 +11,9 @@ enum Direction {
 }
 var facing = Direction.LEFT
 
+func _ready():
+	animated_sprite_2d.play()
+
 func _physics_process(_delta):
 	var distance = global.player_position - global_position
 	if distance.length() < flee_range:
