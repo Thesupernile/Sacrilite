@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnv0gb6db02n"]
+
+[ext_resource type="Script" uid="uid://bjdj4i84hspje" path="res://Scenes/cleric.gd" id="1_1pgvo"]
+[ext_resource type="Texture2D" uid="uid://42dulepeu2vp" path="res://Assets/characters/ClericIdle.png" id="2_56820"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0klx0"]
+atlas = ExtResource("2_56820")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srsfv"]
+atlas = ExtResource("2_56820")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5b5i4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0klx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srsfv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x072d"]
+size = Vector2(20, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2t55"]
+size = Vector2(20, 37)
+
+[node name="Cleric" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_1pgvo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5b5i4")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_x072d")
+
+[node name="HurtboxArea" type="Area2D" parent="."]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="HurtboxArea"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_s2t55")

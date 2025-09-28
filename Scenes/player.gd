@@ -9,6 +9,8 @@ enum Direction {
 var facing = Direction.LEFT
 
 func _physics_process(_delta):
+	global.player_position = global_position
+	
 	var direction := Input.get_vector("left", "right", "up", "down")
 	if direction.x > 0:
 		facing = Direction.RIGHT
