@@ -4,6 +4,7 @@ var player: Player
 var player_position := Vector2()
 var last_scene_name: String
 
+@warning_ignore("unused_signal")
 signal enemyHitSignal
 
 var scene_folder := "res://Scenes/"
