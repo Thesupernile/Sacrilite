@@ -1,7 +1,28 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4me1ks1n41bb"]
+[gd_scene load_steps=19 format=3 uid="uid://c4me1ks1n41bb"]
 
 [ext_resource type="Script" uid="uid://dipqmc0sk7qgt" path="res://Scenes/acolyte.gd" id="1_w2xf1"]
 [ext_resource type="Texture2D" uid="uid://dhetlqqw3lnua" path="res://Assets/characters/AcolyteRun.png" id="2_6p23c"]
+[ext_resource type="Texture2D" uid="uid://db2j1wbmxguv1" path="res://Assets/characters/AcolyteAttack.png" id="3_md3hc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c07j"]
+atlas = ExtResource("3_md3hc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dra8s"]
+atlas = ExtResource("3_md3hc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyg51"]
+atlas = ExtResource("3_md3hc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4otr"]
+atlas = ExtResource("3_md3hc")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkt2a"]
+atlas = ExtResource("3_md3hc")
+region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md3hc"]
 atlas = ExtResource("2_6p23c")
@@ -31,6 +52,26 @@ region = Rect2(128, 64, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4c07j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dra8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyg51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4otr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkt2a")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_md3hc")
 }, {
 "duration": 1.0,
@@ -49,7 +90,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_v2qme")
 }],
 "loop": true,
-"name": &"default",
+"name": &"run",
 "speed": 5.0
 }]
 
@@ -58,6 +99,9 @@ size = Vector2(18, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md3hc"]
 size = Vector2(18, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwawe"]
+size = Vector2(38, 42)
 
 [node name="Acolyte" type="CharacterBody2D"]
 collision_layer = 2
@@ -69,6 +113,7 @@ chase_range = 120.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4c07j")
+animation = &"attack"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 18)
@@ -78,3 +123,8 @@ shape = SubResource("RectangleShape2D_6p23c")
 
 [node name="Hurtbox" type="CollisionShape2D" parent="HurtboxArea"]
 shape = SubResource("RectangleShape2D_md3hc")
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="AttackShape" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("RectangleShape2D_kwawe")
