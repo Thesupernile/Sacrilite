@@ -11,5 +11,6 @@ func enemyDead():
 func enemyHit(damage, nodeHit):
 	if nodeHit == $HurtboxArea:
 		hp -= damage
+		print(hp)
 		if hp <= 0:
 			enemyDead()

@@ -9,7 +9,6 @@ class_name Player extends CharacterBody2D
 @export var speed := 150
 @export var hp := 5
 
-var speed := 150
 var playerDamage := 5
 var isAttacking := false
 enum Direction {
@@ -70,7 +69,7 @@ func damage():
 	hp -= 1
 
 func _on_attack_right_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	global.emit_signal("enemyHitSignal", playerDamage, area)
+	global.emit_signal("enemyHitSignal", playerDamage, _area)
 
 func _on_attack_left_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	global.emit_signal("enemyHitSignal", playerDamage, area)

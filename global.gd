@@ -1,6 +1,6 @@
 class_name SceneManager extends Node
 
-var player: Player
+var player
 var player_position := Vector2()
 var last_scene_name: String
 
