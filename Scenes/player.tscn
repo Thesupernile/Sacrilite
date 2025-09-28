@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bt8vyrw3k7pfo"]
+[gd_scene load_steps=21 format=3 uid="uid://bt8vyrw3k7pfo"]
 
 [ext_resource type="Script" uid="uid://cvbyrfdgloees" path="res://Scenes/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://c5s4joram2ym3" path="res://Assets/characters/Player.png" id="1_v0iea"]
@@ -71,9 +71,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ukyrk")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -113,6 +113,9 @@ size = Vector2(14, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(14, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
+size = Vector2(25, 40)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
@@ -121,6 +124,8 @@ script = ExtResource("1_6t5aa")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6t5aa")
 animation = &"attack"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 17)
@@ -135,3 +140,19 @@ position_smoothing_speed = 8.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_vgqql")
+
+[node name="AttackLeft" type="Area2D" parent="."]
+
+[node name="AttackLeftBox" type="CollisionShape2D" parent="AttackLeft"]
+position = Vector2(-15.5, 1)
+shape = SubResource("RectangleShape2D_fkybt")
+disabled = true
+
+[node name="AttackRight" type="Area2D" parent="."]
+
+[node name="AttackRightBox" type="CollisionShape2D" parent="AttackRight"]
+position = Vector2(15, 1)
+shape = SubResource("RectangleShape2D_fkybt")
+disabled = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

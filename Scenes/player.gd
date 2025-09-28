@@ -1,12 +1,29 @@
 class_name Player extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var LeftAttackHitbox: CollisionShape2D = $AttackLeft/AttackLeftBox
+@onready var RightAttackHitbox: CollisionShape2D = $AttackRight/AttackRightBox
+
 var speed := 150
+var isAttacking := false
 enum Direction {
 	LEFT,
 	RIGHT
 }
 var facing = Direction.LEFT
+
+func checkAttack():
+	if Input.is_action_just_pressed("attack"):
+		isAttacking = true
+	
+	if isAttacking:
+		if facing == Direction.LEFT:
+			LeftAttackHitbox.disabled = false
+			RightAttackHitbox.disabled = true
+		else:
+			LeftAttackHitbox.disabled = true
+			RightAttackHitbox.disabled = false
+			
 
 func _physics_process(_delta):
 	global.player_position = global_position
@@ -19,10 +36,19 @@ func _physics_process(_delta):
 		facing = Direction.LEFT
 		animated_sprite_2d.flip_h = false
 		
-	if direction.x == 0 and direction.y == 0:
+	if isAttacking:
+		animated_sprite_2d.play("attack")
+	elif direction.x == 0 and direction.y == 0:
 		animated_sprite_2d.play("idle")
 	else:
 		animated_sprite_2d.play("run")
 		
+	checkAttack()
+		
 	velocity = direction * speed
 	move_and_slide()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if isAttacking:
+		isAttacking = false
