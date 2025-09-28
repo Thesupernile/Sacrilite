@@ -48,3 +48,4 @@ tile_map_data = PackedByteArray("AAACAAEAAAABAAEAAAACAAIAAAABAAEAAAADAAIAAAABAAE
 tile_set = SubResource("TileSet_7p6j4")
 
 [node name="Player" parent="." instance=ExtResource("1_vk57k")]
+motion_mode = 1
