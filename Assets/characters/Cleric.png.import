@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc7nvp8tgwsll"
-path="res://.godot/imported/Cleric.png-77a93bd6fce6048218fac366981caded.ctex"
+path="res://.godot/imported/Cleric.png-3dd440ba8b1a3900ecf73d5276926de7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cleric.png"
-dest_files=["res://.godot/imported/Cleric.png-77a93bd6fce6048218fac366981caded.ctex"]
+source_file="res://Assets/characters/Cleric.png"
+dest_files=["res://.godot/imported/Cleric.png-3dd440ba8b1a3900ecf73d5276926de7.ctex"]
 
 [params]
 
