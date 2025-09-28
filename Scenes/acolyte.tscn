@@ -62,6 +62,7 @@ size = Vector2(18, 42)
 [node name="Acolyte" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
+motion_mode = 1
 script = ExtResource("1_w2xf1")
 chase_range = 120.0
 
