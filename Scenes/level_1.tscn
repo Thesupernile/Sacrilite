@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://bmj7mcms0xu4l"]
+[gd_scene load_steps=10 format=4 uid="uid://bmj7mcms0xu4l"]
 
 [ext_resource type="TileSet" uid="uid://cs80rfwokossl" path="res://Scenes/tilemap.tres" id="1_8ffim"]
-[ext_resource type="Script" uid="uid://dg3pbygnpyshp" path="res://sceneScript.gd" id="1_evi0p"]
+[ext_resource type="Script" path="res://sceneScript.gd" id="1_evi0p"]
 [ext_resource type="PackedScene" uid="uid://bt8vyrw3k7pfo" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://dnv0gb6db02n" path="res://Scenes/cleric.tscn" id="2_7p6j4"]
 [ext_resource type="Texture2D" uid="uid://bvs4evmkb0kpc" path="res://Assets/map/Tileset.png" id="2_xfk5q"]
-[ext_resource type="PackedScene" uid="uid://bfwbtmfncra30" path="res://Scenes/scene_trigger.tscn" id="5_6444e"]
+[ext_resource type="PackedScene" path="res://Scenes/scene_trigger.tscn" id="5_6444e"]
+[ext_resource type="PackedScene" uid="uid://c4me1ks1n41bb" path="res://Scenes/acolyte.tscn" id="7_lsmp6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
 texture = ExtResource("2_xfk5q")
@@ -86,10 +87,6 @@ tile_set = ExtResource("1_8ffim")
 [node name="Cleric" parent="Entities" instance=ExtResource("2_7p6j4")]
 position = Vector2(119, 39)
 
-[node name="Acolyte" parent="Entities" instance=ExtResource("5_6444e")]
-position = Vector2(76, 55)
-chase_range = 120.0
-
 [node name="Player" parent="." instance=ExtResource("1_vk57k")]
 position = Vector2(7, 23)
 motion_mode = 1
@@ -102,3 +99,6 @@ position = Vector2(8, 46)
 [node name="Portal" parent="." instance=ExtResource("5_6444e")]
 position = Vector2(272, -18)
 connected_scene = "level_2"
+
+[node name="Acolyte" parent="." instance=ExtResource("7_lsmp6")]
+position = Vector2(79, 60)

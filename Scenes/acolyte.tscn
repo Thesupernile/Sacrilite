@@ -63,6 +63,7 @@ size = Vector2(18, 42)
 collision_layer = 2
 collision_mask = 2
 motion_mode = 1
+wall_min_slide_angle = 0.0017453292
 script = ExtResource("1_w2xf1")
 chase_range = 120.0
 
