@@ -90,10 +90,6 @@ position = Vector2(119, 39)
 [node name="Acolyte" parent="Entities" instance=ExtResource("7_lsmp6")]
 position = Vector2(79, 60)
 
-[node name="Player" parent="." instance=ExtResource("1_vk57k")]
-position = Vector2(7, 23)
-motion_mode = 1
-
 [node name="enterance_markers" type="Node2D" parent="."]
 
 [node name="any" type="Marker2D" parent="enterance_markers"]
@@ -102,3 +98,7 @@ position = Vector2(8, 46)
 [node name="Portal" parent="." instance=ExtResource("5_6444e")]
 position = Vector2(272, -18)
 connected_scene = "level_2"
+
+[node name="Player" parent="." instance=ExtResource("1_vk57k")]
+position = Vector2(7, 23)
+motion_mode = 1
