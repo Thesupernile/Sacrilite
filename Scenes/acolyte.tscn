@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://c4me1ks1n41bb"]
+
+[ext_resource type="Script" uid="uid://dipqmc0sk7qgt" path="res://Scenes/acolyte.gd" id="1_w2xf1"]
+[ext_resource type="Texture2D" uid="uid://dhetlqqw3lnua" path="res://Assets/characters/AcolyteRun.png" id="2_6p23c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md3hc"]
+atlas = ExtResource("2_6p23c")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwawe"]
+atlas = ExtResource("2_6p23c")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx2o5"]
+atlas = ExtResource("2_6p23c")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc0uf"]
+atlas = ExtResource("2_6p23c")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1h3u"]
+atlas = ExtResource("2_6p23c")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2qme"]
+atlas = ExtResource("2_6p23c")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4c07j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md3hc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwawe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx2o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc0uf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1h3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2qme")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6p23c"]
+size = Vector2(18, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md3hc"]
+size = Vector2(18, 42)
+
+[node name="Acolyte" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_w2xf1")
+chase_range = 120.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4c07j")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 18)
+shape = SubResource("RectangleShape2D_6p23c")
+
+[node name="HurtboxArea" type="Area2D" parent="."]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="HurtboxArea"]
+shape = SubResource("RectangleShape2D_md3hc")
