@@ -12,7 +12,7 @@ var facing = Direction.LEFT
 
 func _physics_process(_delta):
 	var distance = global.player_position - global_position
-	if distance.length() > chase_range:
+	if distance.length() > chase_range or distance.length() < 20:
 		distance *= 0
 		animated_sprite_2d.pause()
 		animated_sprite_2d.frame = 0

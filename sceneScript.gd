@@ -11,12 +11,11 @@ func _ready():
 		add_child(player)
 	position_player()
 
-	
 func position_player() -> void:
 	var last_scene = global.last_scene_name
 	if last_scene.is_empty():
 		last_scene = "any"
-	
+
 	for enterance in enterance_markers.get_children():
 		var enteranceName = enterance.name
 		if enterance is Marker2D and (enterance.name == "any" or enteranceName == last_scene):
