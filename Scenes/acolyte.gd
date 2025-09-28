@@ -1,7 +1,6 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var hp = 5
-@export var flee_range : float
 @export var chase_range : float
 
 var speed := 50
@@ -11,15 +10,14 @@ enum Direction {
 }
 var facing = Direction.LEFT
 
-func _ready():
-	animated_sprite_2d.play()
-
 func _physics_process(_delta):
 	var distance = global.player_position - global_position
-	if distance.length() < flee_range:
-		distance *= -1
-	elif distance.length() < chase_range:
+	if distance.length() > chase_range:
 		distance *= 0
+		animated_sprite_2d.pause()
+		animated_sprite_2d.frame = 0
+	else:
+		animated_sprite_2d.play()
 
 	var direction = distance.normalized()
 	if direction.x > 0:
