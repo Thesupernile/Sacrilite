@@ -26,10 +26,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x072d"]
-size = Vector2(20, 6)
+size = Vector2(16, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2t55"]
-size = Vector2(20, 37)
+size = Vector2(16, 37)
 
 [node name="Cleric" type="CharacterBody2D"]
 collision_layer = 2
@@ -40,7 +40,7 @@ script = ExtResource("1_1pgvo")
 sprite_frames = SubResource("SpriteFrames_5b5i4")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 14)
+position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_x072d")
 
 [node name="HurtboxArea" type="Area2D" parent="."]
