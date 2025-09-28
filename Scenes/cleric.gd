@@ -1,6 +1,5 @@
-extends CharacterBody2D
+extends enemyBase
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@export var hp := 5
 @export var speed := 50
 @export var projectile_speed := 40
 @export var attack_cooldown_seconds := 2.0
