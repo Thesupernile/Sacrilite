@@ -120,7 +120,7 @@ animation = &"attack"
 frame = 3
 frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_v0iea")
 
@@ -128,9 +128,9 @@ shape = SubResource("RectangleShape2D_v0iea")
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="HurtboxArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Hurtbox" type="CollisionShape2D" parent="HurtboxArea"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_vgqql")
 
