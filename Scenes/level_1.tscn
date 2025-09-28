@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bmj7mcms0xu4l"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Background"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
