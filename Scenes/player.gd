@@ -60,9 +60,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		isAttacking = false
 
 
-func _on_attack_left_area_entered(area: Area2D) -> void:
+func _on_attack_left_area_entered(_area: Area2D) -> void:
 	enemyHit()
 
 
-func _on_attack_right_area_entered(area: Area2D) -> void:
+func _on_attack_right_area_entered(_area: Area2D) -> void:
 	enemyHit()

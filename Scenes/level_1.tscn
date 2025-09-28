@@ -84,6 +84,7 @@ tile_set = ExtResource("1_8ffim")
 position = Vector2(79, 60)
 
 [node name="Cleric" parent="Entities" instance=ExtResource("2_7p6j4")]
+position = Vector2(109, 28)
 
 [node name="enterance_markers" type="Node2D" parent="."]
 
@@ -95,5 +96,5 @@ position = Vector2(272, -18)
 connected_scene = "level_2"
 
 [node name="Player" parent="." instance=ExtResource("1_vk57k")]
-position = Vector2(7, 23)
+position = Vector2(-5, 23)
 motion_mode = 1
