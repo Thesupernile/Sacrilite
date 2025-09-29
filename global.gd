@@ -19,4 +19,7 @@ func changeScenes(from, to_scene_name: String) -> void:
 	player.visible = true
 	
 	next_scene_path = scene_folder + to_scene_name + ".tscn"
-	from.get_tree().call_deferred("change_scene_to_file", scene_folder + "sacrifices.tscn")
+	if to_scene_name != "WinScreen":
+		from.get_tree().call_deferred("change_scene_to_file", scene_folder + "sacrifices.tscn")
+	else:
+		from.get_tree().call_deferred("change_scene_to_file", next_scene_path)

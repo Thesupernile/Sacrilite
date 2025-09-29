@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b08wwe06m0drb"]
+[gd_scene load_steps=11 format=4 uid="uid://n6fq8nvy0m1r"]
 
 [ext_resource type="Script" uid="uid://dg3pbygnpyshp" path="res://sceneScript.gd" id="1_5e78q"]
 [ext_resource type="PackedScene" uid="uid://c3v541vp7fpot" path="res://Scenes/hud.tscn" id="2_5e78q"]
@@ -115,4 +115,4 @@ position = Vector2(8, 46)
 
 [node name="Portal" parent="." instance=ExtResource("7_fxnjf")]
 position = Vector2(56, -191)
-connected_scene = "level_3"
+connected_scene = "WinScreen"
