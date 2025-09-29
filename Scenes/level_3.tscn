@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dnv0gb6db02n" path="res://Scenes/cleric.tscn" id="6_n4vm5"]
 [ext_resource type="PackedScene" uid="uid://bfwbtmfncra30" path="res://Scenes/scene_trigger.tscn" id="7_fxnjf"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5e78q"]
 texture = ExtResource("2_l4wr6")
 0:0/0 = 0
 1:0/0 = 0
@@ -58,7 +58,7 @@ texture = ExtResource("2_l4wr6")
 2:8/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_7p6j4"]
-sources/0 = SubResource("TileSetAtlasSource_evi0p")
+sources/0 = SubResource("TileSetAtlasSource_5e78q")
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_5e78q")
@@ -115,4 +115,4 @@ position = Vector2(8, 46)
 
 [node name="Portal" parent="." instance=ExtResource("7_fxnjf")]
 position = Vector2(56, -191)
-connected_scene = "WinScreen"
+connected_scene = "level_4"
