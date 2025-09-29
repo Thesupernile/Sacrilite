@@ -9,7 +9,10 @@ func sacrificeChosen():
 
 func _on_sacrifice_health_pressed() -> void:
 	global.player.hp -= 1
-	sacrificeChosen()
+	if global.player.hp == 0:
+		self.get_tree().call_deferred("change_scene_to_file", "res://Scenes/GameOver.tscn")
+	else:
+		sacrificeChosen()
 
 
 func _on_sacrifice_damage_pressed() -> void:
@@ -20,7 +23,14 @@ func _on_sacrifice_damage_pressed() -> void:
 
 
 func _on_sacrifice_speed_pressed() -> void:
-	global.player.speed -= 50
+	global.player.speed = snapped(global.player.speed * 0.8, 1)
+	if global.player.speed <= 1:
+		global.player.speed = 1
+	sacrificeChosen()
+
+
+func _on_sacrifice_attack_speed_pressed() -> void:
+	global.player.attackCooldown += 0.3
 	if global.player.speed <= 1:
 		global.player.speed = 1
 	sacrificeChosen()

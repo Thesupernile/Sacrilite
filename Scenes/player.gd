@@ -7,10 +7,13 @@ class_name Player extends CharacterBody2D
 
 
 @export var speed := 150
-@export var hp := 5
+@export var hp := 1000
+@export var attackCooldown := 0.7
 
+var isInvincible := false
 var playerDamage := 5
 var isAttacking := false
+var canAttack := true
 enum Direction {
 	LEFT,
 	RIGHT
@@ -21,8 +24,11 @@ func _ready():
 	hurtbox_area.add_to_group("player")
 
 func checkAttack():
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and canAttack:
 		isAttacking = true
+		canAttack = false
+		$AttackTimer.wait_time = attackCooldown
+		$AttackTimer.start()
 	
 	if isAttacking:
 		if facing == Direction.LEFT:
@@ -68,13 +74,16 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		RightAttackHitbox.disabled = true
 
 func damage():
-	hp -= 1
-	animated_sprite_2d.modulate = Color(1, 0, 0)
-	await get_tree().create_timer(0.15).timeout
-	animated_sprite_2d.modulate = Color(1, 1, 1)
-	global.emit_signal("playerDamaged")
-	if hp <= 0:
-		playerDead()
+	if !isInvincible:
+		hp -= 1
+		animated_sprite_2d.modulate = Color(1, 0, 0)
+		await get_tree().create_timer(0.15).timeout
+		animated_sprite_2d.modulate = Color(1, 1, 1)
+		global.emit_signal("playerDamaged")
+		isInvincible = true
+		$IFrames.start()
+		if hp <= 0:
+			playerDead()
 		
 func playerDead():
 	self.get_tree().call_deferred("change_scene_to_file", "res://Scenes/GameOver.tscn")
@@ -84,3 +93,10 @@ func _on_attack_right_area_shape_entered(_area_rid: RID, _area: Area2D, _area_sh
 
 func _on_attack_left_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	global.emit_signal("enemyHitSignal", playerDamage, area)
+
+
+func _on_i_frames_timeout() -> void:
+	isInvincible = false
+
+func _on_attack_timer_timeout() -> void:
+	canAttack = true

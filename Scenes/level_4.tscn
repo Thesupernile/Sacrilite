@@ -88,7 +88,7 @@ position = Vector2(-33, 34)
 
 [node name="Portal" parent="." instance=ExtResource("4_7huqf")]
 position = Vector2(199, -289)
-connected_scene = "WinScreen"
+connected_scene = "level_5"
 
 [node name="Entities" type="Node2D" parent="."]
 script = ExtResource("5_di0d6")
@@ -111,5 +111,5 @@ position = Vector2(201, -169)
 [node name="Cleric3" parent="Entities" instance=ExtResource("7_3v663")]
 position = Vector2(203, -226)
 
-[node name="Acolyte" parent="." instance=ExtResource("6_54c2w")]
+[node name="Acolyte4" parent="Entities" instance=ExtResource("6_54c2w")]
 position = Vector2(173, 50)

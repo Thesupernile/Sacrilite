@@ -42,6 +42,7 @@ flee_range = 80.0
 chase_range = 110.0
 Projectile = ExtResource("2_0klx0")
 speed = 40
+hp = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5b5i4")
