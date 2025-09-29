@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://dft2ibpofr30b"]
+[gd_scene load_steps=11 format=4 uid="uid://dft2ibpofr30b"]
 
+[ext_resource type="Script" uid="uid://dg3pbygnpyshp" path="res://sceneScript.gd" id="1_5a8oa"]
 [ext_resource type="PackedScene" uid="uid://c3v541vp7fpot" path="res://Scenes/hud.tscn" id="1_wk15n"]
 [ext_resource type="Texture2D" uid="uid://bvs4evmkb0kpc" path="res://Assets/map/Tileset.png" id="2_5a8oa"]
 [ext_resource type="TileSet" uid="uid://cs80rfwokossl" path="res://Scenes/tilemap.tres" id="3_3ntyy"]
@@ -60,6 +61,7 @@ texture = ExtResource("2_5a8oa")
 sources/0 = SubResource("TileSetAtlasSource_w8kbg")
 
 [node name="Level4" type="Node2D"]
+script = ExtResource("1_5a8oa")
 
 [node name="HUD" parent="." instance=ExtResource("1_wk15n")]
 
