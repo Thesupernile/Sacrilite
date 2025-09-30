@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://w67ei6ldlney"]
+[gd_scene load_steps=8 format=4 uid="uid://w67ei6ldlney"]
 
 [ext_resource type="Script" uid="uid://dg3pbygnpyshp" path="res://sceneScript.gd" id="1_gqpvc"]
 [ext_resource type="PackedScene" uid="uid://c3v541vp7fpot" path="res://Scenes/hud.tscn" id="2_rkygx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bfwbtmfncra30" path="res://Scenes/scene_trigger.tscn" id="4_546p8"]
 [ext_resource type="Script" uid="uid://csfkwto5103x8" path="res://Scenes/entities.gd" id="5_vu5tt"]
 [ext_resource type="PackedScene" uid="uid://dnv0gb6db02n" path="res://Scenes/cleric.tscn" id="6_cnikc"]
+[ext_resource type="PackedScene" uid="uid://c4me1ks1n41bb" path="res://Scenes/acolyte.tscn" id="6_rkygx"]
 
 [node name="Level6" type="Node2D"]
 script = ExtResource("1_gqpvc")
@@ -40,6 +41,15 @@ connected_scene = "WinScreen"
 
 [node name="Entities" type="Node2D" parent="."]
 script = ExtResource("5_vu5tt")
+
+[node name="Acolyte" parent="Entities" instance=ExtResource("6_rkygx")]
+position = Vector2(0, -60)
+
+[node name="Acolyte2" parent="Entities" instance=ExtResource("6_rkygx")]
+position = Vector2(-1, -247)
+
+[node name="Acolyte3" parent="Entities" instance=ExtResource("6_rkygx")]
+position = Vector2(0, -466)
 
 [node name="EnemiesNotRequiredToKill" type="Node2D" parent="."]
 

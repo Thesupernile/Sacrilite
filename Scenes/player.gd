@@ -7,7 +7,7 @@ class_name Player extends CharacterBody2D
 
 
 @export var speed := 150
-@export var hp := 1000
+@export var hp := 5
 @export var attackCooldown := 0.7
 
 var isInvincible := false
