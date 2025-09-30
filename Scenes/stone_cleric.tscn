@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://r0a3bpfhcefn"]
+
+[ext_resource type="Script" uid="uid://bflt22uxf6t42" path="res://stone_cleric.gd" id="1_xnc2p"]
+[ext_resource type="PackedScene" uid="uid://bo1trl7atl684" path="res://Scenes/cleric_projectile.tscn" id="2_afj1j"]
+[ext_resource type="Texture2D" uid="uid://dsf7v85aidn2y" path="res://Assets/characters/WhiteClericIdle.png" id="3_xmgf1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1278i"]
+atlas = ExtResource("3_xmgf1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd7ui"]
+atlas = ExtResource("3_xmgf1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_afj1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1278i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd7ui")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x072d"]
+size = Vector2(16, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2t55"]
+size = Vector2(16, 37)
+
+[node name="StoneCleric" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
+wall_min_slide_angle = 0.0017453292
+script = ExtResource("1_xnc2p")
+attack_cooldown_seconds = 3.0
+Projectile = ExtResource("2_afj1j")
+hp = 5000
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_afj1j")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_x072d")
+
+[node name="HurtboxArea" type="Area2D" parent="."]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="HurtboxArea"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_s2t55")

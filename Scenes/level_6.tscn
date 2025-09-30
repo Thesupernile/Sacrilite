@@ -5,8 +5,8 @@
 [ext_resource type="TileSet" uid="uid://cs80rfwokossl" path="res://Scenes/tilemap.tres" id="3_b33os"]
 [ext_resource type="PackedScene" uid="uid://bfwbtmfncra30" path="res://Scenes/scene_trigger.tscn" id="4_546p8"]
 [ext_resource type="Script" uid="uid://csfkwto5103x8" path="res://Scenes/entities.gd" id="5_vu5tt"]
-[ext_resource type="PackedScene" uid="uid://dnv0gb6db02n" path="res://Scenes/cleric.tscn" id="6_cnikc"]
 [ext_resource type="PackedScene" uid="uid://c4me1ks1n41bb" path="res://Scenes/acolyte.tscn" id="6_rkygx"]
+[ext_resource type="PackedScene" uid="uid://r0a3bpfhcefn" path="res://Scenes/stone_cleric.tscn" id="7_rkygx"]
 
 [node name="Level6" type="Node2D"]
 script = ExtResource("1_gqpvc")
@@ -37,7 +37,7 @@ position = Vector2(0, 20)
 
 [node name="Portal" parent="." instance=ExtResource("4_546p8")]
 position = Vector2(1, -521)
-connected_scene = "WinScreen"
+connected_scene = "level_7"
 
 [node name="Entities" type="Node2D" parent="."]
 script = ExtResource("5_vu5tt")
@@ -53,26 +53,26 @@ position = Vector2(0, -466)
 
 [node name="EnemiesNotRequiredToKill" type="Node2D" parent="."]
 
-[node name="Cleric" parent="EnemiesNotRequiredToKill" instance=ExtResource("6_cnikc")]
-position = Vector2(-88, -69)
+[node name="StoneCleric" parent="EnemiesNotRequiredToKill" instance=ExtResource("7_rkygx")]
+position = Vector2(-89, -70)
 
-[node name="Cleric2" parent="EnemiesNotRequiredToKill" instance=ExtResource("6_cnikc")]
+[node name="StoneCleric2" parent="EnemiesNotRequiredToKill" instance=ExtResource("7_rkygx")]
 position = Vector2(89, -69)
 
-[node name="Cleric3" parent="EnemiesNotRequiredToKill" instance=ExtResource("6_cnikc")]
-position = Vector2(-88, -165)
+[node name="StoneCleric3" parent="EnemiesNotRequiredToKill" instance=ExtResource("7_rkygx")]
+position = Vector2(-88, -166)
 
-[node name="Cleric4" parent="EnemiesNotRequiredToKill" instance=ExtResource("6_cnikc")]
-position = Vector2(90, -165)
+[node name="StoneCleric4" parent="EnemiesNotRequiredToKill" instance=ExtResource("7_rkygx")]
+position = Vector2(87, -166)
 
-[node name="Cleric5" parent="EnemiesNotRequiredToKill" instance=ExtResource("6_cnikc")]
-position = Vector2(-88, -327)
+[node name="StoneCleric5" parent="EnemiesNotRequiredToKill" instance=ExtResource("7_rkygx")]
+position = Vector2(-88, -325)
 
-[node name="Cleric6" parent="EnemiesNotRequiredToKill" instance=ExtResource("6_cnikc")]
-position = Vector2(90, -327)
+[node name="StoneCleric6" parent="EnemiesNotRequiredToKill" instance=ExtResource("7_rkygx")]
+position = Vector2(90, -326)
 
-[node name="Cleric7" parent="EnemiesNotRequiredToKill" instance=ExtResource("6_cnikc")]
-position = Vector2(-88, -421)
+[node name="StoneCleric7" parent="EnemiesNotRequiredToKill" instance=ExtResource("7_rkygx")]
+position = Vector2(-87, -422)
 
-[node name="Cleric8" parent="EnemiesNotRequiredToKill" instance=ExtResource("6_cnikc")]
-position = Vector2(89, -421)
+[node name="StoneCleric8" parent="EnemiesNotRequiredToKill" instance=ExtResource("7_rkygx")]
+position = Vector2(90, -422)

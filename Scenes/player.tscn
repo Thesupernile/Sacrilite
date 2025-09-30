@@ -101,7 +101,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0iea"]
-size = Vector2(10, 8)
+size = Vector2(10, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(14, 40)
@@ -119,7 +119,7 @@ sprite_frames = SubResource("SpriteFrames_6t5aa")
 animation = &"attack"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 17)
+position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_v0iea")
 
 [node name="Camera2D" type="Camera2D" parent="."]
